@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "ts-css-modules-vite-plugin",
+        "root": "./"
+      }
+    ],
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "vite.config.ts"
+  ]
+}
