@@ -6,9 +6,11 @@ import useProjectsGroup from '../Hooks/useProjectsGroup'
 import styles from '../Styles/style.module.css'
 const ProjectDisplay = () => {
 
-    const { projects, removeProject, tasks, setProjects } = useProjectContext()
+    const { projects, setGroupedProjects, removeProject, tasks, setProjects } = useProjectContext()
 
-    let g = useProjectsGroup(tasks, 'projectId')
+    let group = useProjectsGroup(tasks, 'projectId')
+
+
     // Itterate over projects and get id of each project get tasks based on that id from map
     //p.id -if map has project id  = project.id (same value exists in both)? return those tasks
 
@@ -28,19 +30,19 @@ const ProjectDisplay = () => {
 
 
     return (
-        <div className={styles.container}>
-            <ul> <li> Name</li><li> Tasks</li></ul>
+        <div >
+            <ul className={styles.subContainer}> <li > Name</li><li> Tasks</li></ul>
             {projects.map(project => (
                 <>
-                    <li>
+                    <li className={styles.listContainer}>
                         <button onClick={() => deleteProject(project.id)}>delete</button>
                         <p>{project.title}</p>
-                        {g.get(project.id)?.map(t => (<p> {t.title}</p>))}
+                        {group.get(project.id)?.map(t => (<p> {t.title}</p>))}
                     </li>
                 </>
             ))
             }
-        </div>
+        </div >
     )
 }
 export default ProjectDisplay

@@ -5,23 +5,8 @@ import { useProjectContext } from '../Hooks/useProjectContext'
 
 const ProjectList = () => {
     const { tasks, setTasks, projects, removeProject, setProjects, } = useProjectContext()
-    useEffect(() => {
-        //abstract till hook as well?
-        async function getProject() {
-            useAxiosFetch<Project[]>({
-                method: "GET",
-                url: "/projects",
-            }).then((resp) => {
-                if (resp) {
-                    setProjects?.(resp)
-                    console.log(resp)
-                }
-            })
-        } getProject()
-        // export const getData = async<T>(url:string): Promise<T>=>{
-        //     const response = await fetch(url)
-        //     return await response.json()
-        // }
+
+    function getTasks() {
         useAxiosFetch<Task[]>({
             method: "GET",
             url: "/tasks",
@@ -31,11 +16,15 @@ const ProjectList = () => {
                 console.log(resp)
             }
         })
+    }
+    useEffect(() => {
+        // getProject()
+        getTasks()
+        // export const getData = async<T>(url:string): Promise<T>=>{
+        //     const response = await fetch(url)
+        //     return await response.json()
+        // }
     }, [])
-
-
-    console.log(tasks)
-    console.log(projects)
     return (
         <div>
             <ProjectDisplay />

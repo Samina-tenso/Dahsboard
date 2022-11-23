@@ -1,3 +1,22 @@
-.container {
-    background-color: brown;
+.listContainer {
+    border: solid black 1px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.subContainer {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+.outerContainer {
+    border: blue solid 2px;
+}
+
+.time {
+    align-items: center;
+    display: flex;
+
 }

@@ -7,6 +7,7 @@ import React from 'react'
 import { ReactDOM } from 'react'
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 import Root from './Root'
+import Invoice from './componets/Invoice'
 function App() {
   const router = createBrowserRouter([
 
@@ -18,6 +19,10 @@ function App() {
         {
           path: "/details",
           element: <Details />
+        },
+        {
+          path: "/invoice",
+          element: <Invoice />
         }
       ]
     }

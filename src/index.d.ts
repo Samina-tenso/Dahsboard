@@ -6,6 +6,24 @@ interface ProjectActions {
     removeProject: (id: string) => void
     showAllTasks: boolean
     setShowAllTasks: React.Dispatch<React.SetStateAction<boolean>>
+    groupedProjects: Map<string, Task[]>
+    setSelectedProject: React.Dispatch<React.SetStateAction<Selected | {
+        id: '';
+        title: '';
+    } | undefined>>
+    setGroupedProjects: React.Dispatch<React.SetStateAction<Map<string, Task[]>>>
+    selectedProject: Selected | {
+        id: '';
+        title: '';
+    } | undefined
+}
+
+
+
+
+interface Selected {
+    id: string,
+    title: string
 }
 
 interface NewArray {
@@ -22,6 +40,10 @@ interface NewTask {
     time: timeKeys
 }
 
+interface TaskProps {
+    removeTime: (id: string) => void
+    deleteTask: (id: string) => void
+}
 //single project
 interface Project {
     id: string
