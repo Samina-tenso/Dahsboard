@@ -30,7 +30,29 @@ interface ProjectActions {
     setHourlyRate: React.Dispatch<React.SetStateAction<HourlyRate | { hRate: 0; } | undefined>>
     status: StatusIndicator | undefined
     setStatus: React.Dispatch<React.SetStateAction<StatusIndicator | { status: "waiting" }>>
+    invoices: Invoice[]
+    setInvoices: React.Dispatch<React.SetStateAction<Invoice[]>>
+    created: CreatedDate | undefined
+    setCreatedDate: React.Dispatch<React.SetStateAction<CreatedDate | undefined>>
+    dueDate: DueDate | undefined
+    setDueDate: React.Dispatch<React.SetStateAction<DueDate | undefined>>
+    newTask: NewTask[]
+    setNewTaskArray: React.Dispatch<React.SetStateAction<NewTask[]>>
 }
+
+interface GetTaskTime {
+    sum: (a: number, b: number, c: number) => number;
+
+}
+
+
+interface RoundTime {
+    sum: (a: number, b: number) => number
+}
+interface RoundProjectTime {
+    sum: (a: number) => number
+}
+
 interface ProjectPrice {
     totalPrice: number
 }
@@ -43,7 +65,7 @@ interface InvoiceName {
 
 interface StatusIndicator {
     status: string
-    date?: Date
+
 }
 
 interface Selected {
@@ -51,17 +73,29 @@ interface Selected {
     title?: string
 }
 
+
 interface NewArray {
     setNewArray: React.Dispatch<React.SetStateAction<NewTask[]>>
     newTask: NewTask[]
 }
 
+interface DueDate {
+    date: Date
+}
+interface CreatedDate {
+    date: Date
+}
 
-// interface TaskTime {
-//     taskTime: number[]
-// }
 
-
+interface Invoice {
+    status?: string
+    name?: string
+    projectName?: string
+    totalPrice?: number
+    hourlyRate?: number
+    created?: string
+    dueDate?: string
+}
 interface InvoiceTask {
     id: string,
     title: string,
@@ -111,6 +145,4 @@ interface timeKeys {
 interface ProviderProps {
     children?: React.ReactNode;
 }
-interface FetchError {
-    errorMessage: string
-}
+

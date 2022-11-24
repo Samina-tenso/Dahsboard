@@ -28,7 +28,7 @@ const ProjectList = () => {
     return (
         <div>
             <ProjectDisplay />
-            <p> hello</p>
+
         </div>
     )
 }

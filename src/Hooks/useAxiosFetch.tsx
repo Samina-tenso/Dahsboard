@@ -5,7 +5,7 @@ export async function useAxiosFetch<Type>(params: AxiosRequestConfig<any>): Prom
     axios.defaults.baseURL = "http://localhost:3000";
     try {
         const response = await axios.request<Type>(params)
-        console.log(response)
+        console.log(response.status)
         return response.data
 
     } catch (AxiosError) {

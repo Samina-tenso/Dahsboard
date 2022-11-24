@@ -2,24 +2,29 @@ import { useProjectContext } from "../Hooks/useProjectContext"
 import { useEffect, useState } from "react"
 
 
-const Status = () => {
+const StatusDropDown = () => {
     const { status, setStatus, showAllTasks, setShowAllTasks, setTasks, tasks } = useProjectContext()
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
     useEffect(() => {
-    }, [isOpen])
+    }, [])
     const handleDropDown = () => {
         if (!isOpen) {
-            setIsOpen(true)
+            return setIsOpen(true)
         }
         if (isOpen) {
-            setIsOpen(false)
+            return setIsOpen(false)
         }
     }
     const handleStatus = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const target = e.target as Element
-        target.id == "waiting" ? setStatus({ status: "waiting" }) : setStatus({ status: "paid" })
-        console.log(target.id)
+        if (target.id == "waiting") {
+            setStatus({ status: "waiting" })
+        } else if (target.id == "paid") {
+            setStatus({ status: "paid" })
+        } else {
+            setStatus({ status: "late" })
+        }
     }
     return (
         <div>
@@ -30,8 +35,9 @@ const Status = () => {
                 {isOpen ? (
                     <ul>
 
-                        <li key={1} id="waiting" onClick={(e) => { handleStatus(e); handleDropDown() }}> waiting</li>
-                        <li key={2} id="paid" onClick={(e) => { handleStatus(e); handleDropDown() }}> paid</li>
+                        <li key={1} id="waiting" onClick={(e) => { handleStatus(e); handleDropDown() }}> Waiting</li>
+                        <li key={2} id="paid" onClick={(e) => { handleStatus(e); handleDropDown() }}> Paid</li>
+                        <li key={3} id="late" onClick={(e) => { handleStatus(e); handleDropDown() }}> Late</li>
 
                     </ul>
                 ) : null}
@@ -39,5 +45,5 @@ const Status = () => {
         </div>
     )
 }
-export default Status
+export default StatusDropDown
 

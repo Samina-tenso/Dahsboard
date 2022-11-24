@@ -16,23 +16,7 @@
       "projectId": "05dbc9fa-f650-42e3-99ed-fb301b435c24",
       "projectTitle": "er",
       "day": "2022-11-17",
-      "time": {
-        "seconds": 0,
-        "minutes": 1,
-        "hours": 0
-      }
-    },
-    {
-      "id": "1df",
-      "title": "ewrwe",
-      "projectId": "1",
-      "projectTitle": "er",
-      "day": "2022-11-18",
-      "time": {
-        "seconds": 45,
-        "minutes": 1,
-        "hours": 2
-      }
+      "time": null
     },
     {
       "id": "1df",
@@ -51,12 +35,82 @@
       "title": "ewrwe",
       "projectId": "05dbc9fa-f650-42e3-99ed-fb301b435c24",
       "projectTitle": "er",
-      "day": "2022-9-21",
+      "day": "2022-11-12",
       "time": {
         "seconds": 0,
         "minutes": 1,
         "hours": 0
       }
+    }
+  ],
+  "invoices": [
+    {
+      "status": "waiting",
+      "name": "Samina",
+      "projectName": "jj",
+      "totalPrice": 44,
+      "hourlyRate": 11,
+      "created": "2022-11-24",
+      "dueDate": "2022-12-24",
+      "id": 6
+    },
+    {
+      "status": "waiting",
+      "name": "Samina",
+      "projectName": "jj",
+      "totalPrice": 44,
+      "hourlyRate": 11,
+      "created": "2022-11-24",
+      "dueDate": "2022-12-24",
+      "id": 7
+    },
+    {
+      "status": "waiting",
+      "name": "jl",
+      "projectName": "jj",
+      "totalPrice": 0,
+      "hourlyRate": 24,
+      "created": "2022-11-24",
+      "dueDate": "2022-12-24",
+      "id": 8
+    },
+    {
+      "status": "waiting",
+      "name": "horse",
+      "projectName": "jj",
+      "totalPrice": 500,
+      "hourlyRate": 123,
+      "created": "2022-11-24",
+      "dueDate": "2022-12-24",
+      "id": 9
+    },
+    {
+      "status": "waiting",
+      "name": "rt",
+      "projectName": "jj",
+      "totalPrice": 82,
+      "hourlyRate": 20,
+      "created": "2022-11-24",
+      "dueDate": "2022-12-24",
+      "id": 10
+    },
+    {
+      "status": "waiting",
+      "name": "rt",
+      "projectName": "jj",
+      "totalPrice": 0,
+      "hourlyRate": 0,
+      "created": "2022-11-24",
+      "dueDate": "2022-12-24",
+      "id": 11
+    },
+    {
+      "status": "waiting",
+      "totalPrice": 0,
+      "hourlyRate": 0,
+      "created": "2022-11-24",
+      "dueDate": "2022-12-24",
+      "id": 12
     }
   ]
 }
