@@ -5,7 +5,7 @@ const InvoiceName = () => {
     const { tasks, setTasks, projects, invoiceName, setInvoiceName, removeProject, setProjects, } = useProjectContext()
     console.log(invoiceName)
     const [submitted, setsubmitted] = useState<boolean>(false)
-    const handleForm = (e) => {
+    const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInvoiceName({
             ...InvoiceName,
             name: e.target.value
@@ -19,7 +19,7 @@ const InvoiceName = () => {
         <div>
             {submitted ? <p>{invoiceName?.name}</p> :
                 <form onSubmit={handleSubmit}>
-                    < input id="name" placeholder="name" type="text" onChange={handleForm} />
+                    < input id="name" placeholder="name" type="text" onChange={(e) => handleForm(e)} />
                 </form>
             }
         </div>

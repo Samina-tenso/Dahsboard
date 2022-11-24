@@ -27,7 +27,24 @@
       "title": "ewrwe",
       "projectId": "1",
       "projectTitle": "er",
-      "day": "2022-11-18"
+      "day": "2022-11-18",
+      "time": {
+        "seconds": 45,
+        "minutes": 1,
+        "hours": 2
+      }
+    },
+    {
+      "id": "1df",
+      "title": "ruo",
+      "projectId": "1",
+      "projectTitle": "er",
+      "day": "2022-11-18",
+      "time": {
+        "seconds": 45,
+        "minutes": 1,
+        "hours": 2
+      }
     },
     {
       "id": "hkk",

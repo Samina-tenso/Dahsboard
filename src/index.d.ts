@@ -18,7 +18,7 @@ interface ProjectActions {
     } | undefined
     setInvoiceTasks: React.Dispatch<React.SetStateAction<InvoiceTask[]>>
     invoiceTask: InvoiceTask[]
-    invoiceName: InvoiceName | {} | undefined
+    invoiceName: InvoiceName | { name: '' } | undefined
     setInvoiceName: React.Dispatch<React.SetStateAction<InvoiceName | undefined>>
     projectPrice: ProjectPrice | { totalPrice: 0; } | undefined
     setProjectPrice: React.Dispatch<React.SetStateAction<ProjectPrice | {
@@ -28,8 +28,9 @@ interface ProjectActions {
         hRate: 0;
     } | undefined
     setHourlyRate: React.Dispatch<React.SetStateAction<HourlyRate | { hRate: 0; } | undefined>>
+    status: StatusIndicator | undefined
+    setStatus: React.Dispatch<React.SetStateAction<StatusIndicator | { status: "waiting" }>>
 }
-
 interface ProjectPrice {
     totalPrice: number
 }
@@ -38,6 +39,11 @@ interface HourlyRate {
 }
 interface InvoiceName {
     name: string
+}
+
+interface StatusIndicator {
+    status: string
+    date?: Date
 }
 
 interface Selected {
@@ -51,6 +57,11 @@ interface NewArray {
 }
 
 
+// interface TaskTime {
+//     taskTime: number[]
+// }
+
+
 interface InvoiceTask {
     id: string,
     title: string,
@@ -58,6 +69,7 @@ interface InvoiceTask {
     projectTitle: string,
     day: string,
     time: timeKeys
+    price: number
 }
 
 interface NewTask {
@@ -86,6 +98,7 @@ interface Task {
     projectTitle: string,
     day: string,
     time: timeKeys
+    price: number
 
 }
 
