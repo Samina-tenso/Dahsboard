@@ -5,8 +5,8 @@ import { useEffect, useState } from "react"
 import styles from '../Styles/style.module.css'
 
 const ActiveTasks = (props: TaskProps) => {
-    const { tasks, setTasks } = useProjectContext()
-    const [newTask, setNewArray] = useState<NewTask[]>([])
+    const { tasks, setTasks, newTask, setNewTaskArray } = useProjectContext()
+
 
     //  let newTaskArray: NewTask[] = []
     useEffect(() => {
@@ -20,6 +20,7 @@ const ActiveTasks = (props: TaskProps) => {
 
 
     function getActiveTasks(): void {
+        let newArray: Task[] = []
         let today = formatISO(new Date(), { representation: 'date' })
         let priorDate = sub(new Date(today), {
             days: 30
@@ -31,13 +32,17 @@ const ActiveTasks = (props: TaskProps) => {
         })
         datesArray.map(a => {
             tasks.forEach(t => {
-                let arrDate = formatISO(new Date(a), { representation: 'date' })
-                if (t.day === arrDate && t.time) {
-                    console.log(t.day)
-                    setNewArray([t])
-                }
+                const arrDate: string[] = [] = [formatISO(new Date(a), { representation: 'date' })]
+                arrDate.map(d => {
+                    if (t.day === d && t.time) {
+                        console.log(t)
+                        newArray.push(t)
+                    }
+                })
             })
         })
+        setNewTaskArray(newArray)
+        console.log(newTask)
     }
 
     return (
