@@ -14,9 +14,10 @@ const Totals = () => {
             </thead>
             <tbody>
                 < tr >
-                    <td><h3>{invoices.length}</h3></td>
+
                     <td><h3>{projects.length}</h3></td>
                     <td><h3>{tasks.length}</h3></td>
+                    <td><h3>{invoices.length}</h3></td>
                 </tr>
             </tbody>
         </Table>

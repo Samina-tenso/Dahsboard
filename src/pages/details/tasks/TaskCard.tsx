@@ -5,14 +5,14 @@ import AllTasks from "./AllTasksTable"
 import ActiveTasks from "./ActiveTasksTable"
 import { useAxiosFetch } from "../../../Hooks/useAxiosFetch"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToggleButton, ToggleButtonGroup, Row, Col } from "react-bootstrap";
+import { ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 
 const TaskCard = () => {
     const { showAllTasks, setShowAllTasks, setTasks, tasks } = useProjectContext()
     useEffect(() => {
     }, [showAllTasks])
 
-    const removeTime = (id: string): void => {
+    function removeTime(id: string): void {
         console.log("did")
         useAxiosFetch<Task[]>({
             method: "PATCH",
@@ -28,6 +28,7 @@ const TaskCard = () => {
     }
 
     const deleteTask = (id: string): void => {
+
         console.log(id)
         useAxiosFetch<Task[]>({
             method: "DELETE",

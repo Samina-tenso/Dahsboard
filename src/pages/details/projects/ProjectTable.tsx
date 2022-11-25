@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useAxiosFetch } from '../../../Hooks/useAxiosFetch'
 import { useProjectContext } from '../../../Hooks/useProjectContext'
 import useProjectsGroup from '../../../Hooks/useProjectsGroup'
@@ -24,7 +23,6 @@ const ProjectList = () => {
             <h3> Projects</h3>
             <Table responsive>
                 <thead>
-
                     <tr>
                         <th></th>
                         <th>Name</th>
@@ -33,7 +31,7 @@ const ProjectList = () => {
                 </thead>
                 <tbody>
                     {projects.map(project => (
-                        <tr>
+                        <tr key={project.id}>
                             <td><button onClick={() => deleteProject(project.id)}>delete</button></td>
                             <td>  <p>{project.title}</p></td>
                             <td> {group.get(project.id)?.map(t => (<p> {t.title}</p>))}</td>

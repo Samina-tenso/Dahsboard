@@ -29,7 +29,6 @@ export const ProjectProvider = ({ children }: ProviderProps) => {
         }).then((resp) => {
             if (resp) {
                 setProjects?.(resp)
-                console.log(resp)
             }
         })
     }
@@ -40,7 +39,6 @@ export const ProjectProvider = ({ children }: ProviderProps) => {
         }).then((resp) => {
             if (resp) {
                 setTasks(resp)
-                console.log(resp)
             }
         })
     }
@@ -51,7 +49,6 @@ export const ProjectProvider = ({ children }: ProviderProps) => {
         }).then((resp) => {
             if (resp) {
                 setInvoices?.(resp)
-                console.log(resp)
             }
         })
     }

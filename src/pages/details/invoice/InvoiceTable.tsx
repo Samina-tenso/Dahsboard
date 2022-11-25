@@ -18,7 +18,7 @@ const InvoiceTable = () => {
                 </thead>
                 <tbody>
                     {invoices?.map(i => (
-                        < tr >
+                        < tr key={i.id} >
                             <td>{i.name}</td>
                             <td>{i.status}</td>
                             <td>{i.totalPrice}</td>

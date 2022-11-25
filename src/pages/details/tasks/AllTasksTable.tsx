@@ -11,14 +11,13 @@ const AllTasks = (props: TaskProps) => {
                     <th></th>
                     <th>Task</th>
                     <th>Project Name</th>
-
                     <th>Time</th>
                 </tr>
             </thead>
             <tbody>
                 {
                     tasks.map(t => (
-                        <tr>
+                        <tr key={t.id}>
                             <td><button onClick={() => props.deleteTask(t.id)}> delete </button></td>
                             <td>{t.title}</td>
                             <td>{t.projectTitle}</td>
