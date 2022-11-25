@@ -1,20 +1,21 @@
-import ProjectDropDown from "./ProjectDropdown";
-import TaskList from "./TaskList";
+import ProjectDropDown from "../details/projects/ProjectDropdown";
+import InvoiceTaskList from "./InvoiceTaskList";
 import InvoiceName from "./InvoiceName";
-import HourlyRate from "./HourlyRate";
+import HourlyRate from "./InvoiceHourlyRate";
 import StatusDropDown from "./StatusDropDown";
-import { useProjectContext } from '../Hooks/useProjectContext'
+import { useProjectContext } from '../../Hooks/useProjectContext'
 import { useEffect, useState } from 'react'
 import { formatISO, addDays } from "date-fns";
-import { useAxiosFetch } from "../Hooks/useAxiosFetch";
+import { useAxiosFetch } from "../../Hooks/useAxiosFetch";
 import { AxiosError } from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from "react-bootstrap";
 
 const Invoice = () => {
-
-    // const [invoice, setInvoice] = useState<Invoice | {}>()
     const [showDate, setShowDate] = useState<string>()
     const [showDueDate, setShowDueDate] = useState<string>()
-    const { setInvoices, created, setCreatedDate, setDueDate, dueDate, status, hourlyRate, projectPrice, invoiceName, selectedProject } = useProjectContext()
+    const [createdInvoice, setCreatedInvoice] = useState<boolean>(false)
+    const { setInvoices, created, setCreatedDate, setDueDate, status, hourlyRate, projectPrice, invoiceName, selectedProject } = useProjectContext()
 
     useEffect(() => {
         getCurrentDate()
@@ -35,9 +36,7 @@ const Invoice = () => {
             setShowDueDate(formatISO(new Date(due), { representation: 'date' }))
         }
     }
-
     const CreateInvoice = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.preventDefault()
         const newInvoice: Invoice = {
             status: status?.status,
             name: invoiceName?.name,
@@ -46,7 +45,6 @@ const Invoice = () => {
             hourlyRate: hourlyRate?.hRate,
             created: showDate,
             dueDate: showDueDate
-
         }
 
         useAxiosFetch<Invoice[]>({
@@ -57,21 +55,24 @@ const Invoice = () => {
             if (resp) {
                 setInvoices(resp)
                 console.log(resp)
+                setCreatedInvoice(true)
             } else { console.log(AxiosError) }
         })
     }
 
     return (
-        <div>
-            <p>{status?.status}</p>  <p>Date:</p>   <p>{showDate}</p><p>Due in 30 Days:</p><p>{showDueDate}</p>
+        <Container>
+            <Row>
+                <Col>  <p>Status: {status?.status}</p> <p>Due in 30 Days:</p><p>{showDueDate}</p></Col><Col> <p>Date: {showDate}</p></Col>
+            </Row>
             <StatusDropDown />
-            <ProjectDropDown />
             <InvoiceName />
-            <TaskList />
+            <ProjectDropDown />
+            <InvoiceTaskList />
             <HourlyRate />
-            <button type="submit" onClick={(e) => CreateInvoice(e)}> Create Invoice</button>
-        </div>
+            {createdInvoice ? <p> Invoice created!</p> :
+                <button type="submit" onClick={(e) => CreateInvoice(e)}> Create Invoice</button>}
+        </Container >
     )
 }
-
 export default Invoice

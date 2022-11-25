@@ -1,4 +1,4 @@
-import { useProjectContext } from "../Hooks/useProjectContext"
+import { useProjectContext } from "../../Hooks/useProjectContext"
 import { useEffect, useState } from "react"
 
 
@@ -19,11 +19,11 @@ const StatusDropDown = () => {
     const handleStatus = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const target = e.target as Element
         if (target.id == "waiting") {
-            setStatus({ status: "waiting" })
+            setStatus({ status: "Waiting" })
         } else if (target.id == "paid") {
-            setStatus({ status: "paid" })
+            setStatus({ status: "Paid" })
         } else {
-            setStatus({ status: "late" })
+            setStatus({ status: "Late" })
         }
     }
     return (

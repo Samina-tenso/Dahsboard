@@ -1,6 +1,6 @@
-import TaskCard from "./TaskCard";
-import ProjectCard from './ProjectCard'
-import InvoiceTable from "./InvoiceTable";
+import TaskCard from "./tasks/TaskCard";
+import ProjectCard from './projects/ProjectTable'
+import InvoiceTable from "./invoice/InvoiceTable";
 const Details = () => {
     return (
         <>

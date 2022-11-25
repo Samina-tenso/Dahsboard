@@ -11,16 +11,16 @@
   ],
   "tasks": [
     {
-      "id": "1ea7fa5f-85ae-4852-ba28-817051ed08dd",
-      "title": "fo",
-      "projectId": "05dbc9fa-f650-42e3-99ed-fb301b435c24",
+      "id": "13",
+      "title": "ruo",
+      "projectId": "1",
       "projectTitle": "er",
-      "day": "2022-11-17",
+      "day": "2022-11-18",
       "time": null
     },
     {
       "id": "1df",
-      "title": "ruo",
+      "title": "horse",
       "projectId": "1",
       "projectTitle": "er",
       "day": "2022-11-18",
@@ -31,15 +31,39 @@
       }
     },
     {
-      "id": "hkk",
-      "title": "ewrwe",
+      "id": "1hk",
+      "title": "horse2",
+      "projectId": "1",
+      "projectTitle": "er",
+      "day": "2022-11-18",
+      "time": {
+        "seconds": 45,
+        "minutes": 1,
+        "hours": 2
+      }
+    },
+    {
+      "id": "1",
+      "title": "jo",
       "projectId": "05dbc9fa-f650-42e3-99ed-fb301b435c24",
       "projectTitle": "er",
       "day": "2022-11-12",
       "time": {
-        "seconds": 0,
+        "seconds": 45,
         "minutes": 1,
-        "hours": 0
+        "hours": 2
+      }
+    },
+    {
+      "id": "90",
+      "title": "kl",
+      "projectId": "05dbc9fa-f650-42e3-99ed-fb301b435c24",
+      "projectTitle": "er",
+      "day": "2022-11-12",
+      "time": {
+        "seconds": 45,
+        "minutes": 1,
+        "hours": 2
       }
     }
   ],
@@ -105,12 +129,77 @@
       "id": 11
     },
     {
-      "status": "waiting",
-      "totalPrice": 0,
+      "status": "paid",
+      "totalPrice": 200,
       "hourlyRate": 0,
       "created": "2022-11-24",
       "dueDate": "2022-12-24",
       "id": 12
+    },
+    {
+      "status": "paid",
+      "projectName": "jj",
+      "totalPrice": 122,
+      "hourlyRate": 60,
+      "created": "2022-11-25",
+      "dueDate": "2022-12-25",
+      "id": 13
+    },
+    {
+      "status": "paid",
+      "projectName": "jj",
+      "totalPrice": 406,
+      "hourlyRate": 200,
+      "created": "2022-11-25",
+      "dueDate": "2022-12-25",
+      "id": 14
+    },
+    {
+      "status": "paid",
+      "projectName": "jj",
+      "totalPrice": 406,
+      "hourlyRate": 200,
+      "created": "2022-11-25",
+      "dueDate": "2022-12-25",
+      "id": 15
+    },
+    {
+      "status": "Paid",
+      "name": "ja",
+      "projectName": "jj",
+      "totalPrice": 4,
+      "hourlyRate": 1,
+      "created": "2022-11-25",
+      "dueDate": "2022-12-25",
+      "id": 16
+    },
+    {
+      "status": "Waiting",
+      "projectName": "jj",
+      "totalPrice": 0,
+      "hourlyRate": 0,
+      "created": "2022-11-25",
+      "dueDate": "2022-12-25",
+      "id": 17
+    },
+    {
+      "status": "Waiting",
+      "projectName": "jj",
+      "totalPrice": 0,
+      "hourlyRate": 0,
+      "created": "2022-11-25",
+      "dueDate": "2022-12-25",
+      "id": 18
+    },
+    {
+      "status": "Paid",
+      "name": "sathvik katam",
+      "projectName": "jj",
+      "totalPrice": 82,
+      "hourlyRate": 20,
+      "created": "2022-11-25",
+      "dueDate": "2022-12-25",
+      "id": 19
     }
   ]
 }

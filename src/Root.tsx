@@ -1,27 +1,26 @@
 import { Outlet, Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Nav } from "react-bootstrap";
 export default function Root() {
     return (
-        <>
-            <div >
-                <Outlet />
-                <nav>
-                    <ul >
-                        <li>
-                            <Link to={`/details`}>details</Link>
-                        </li>
-                        <li>
-                            <Link to={`/overview`}>overview</Link>
-                        </li>
-                        <li>
-                            <Link to={`/invoice`}>invoice</Link>
-                        </li>
-                    </ul>
-                </nav>
 
-                {/* other elements */}
+        <div >
+            <Outlet />
 
-            </div>
+            <Nav className="justify-content-center"
+                activeKey="/details"
+            >
+                <Nav.Item>
+                    <Nav.Link href='/details'>Details</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href='/overview'>Overivew</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href='invoice'>Invoice</Nav.Link>
+                </Nav.Item>
 
-        </>
+            </Nav>
+        </div>
     );
 }

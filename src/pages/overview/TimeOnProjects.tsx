@@ -1,8 +1,8 @@
-import { useProjectContext } from '../Hooks/useProjectContext'
+import { useProjectContext } from '../../Hooks/useProjectContext'
 import Table from 'react-bootstrap/Table'
-import { useGetTaskTime } from '../Hooks/TimeHooks'
+import { useGetTaskTime } from '../../Hooks/TimeHooks'
 import { useEffect } from 'react'
-import { useRoundedProject } from '../Hooks/TimeHooks'
+import { useRoundedProject } from '../../Hooks/TimeHooks'
 import { useState } from 'react'
 
 const TimeOnProjects = () => {
@@ -10,7 +10,7 @@ const TimeOnProjects = () => {
     const { projects, newTask } = useProjectContext()
     useEffect(() => {
         TotalProjectHours()
-        console.log("jk")
+
     }, [totalProjectHours])
     function TotalProjectHours(): void {
         let projectHours: number[] = []
@@ -27,18 +27,17 @@ const TimeOnProjects = () => {
         }
     }
 
-
     return (
         <Table>
             <thead>
                 <tr>
                     <th>Time on projects last 30 days</th>
-                    <th>{totalProjectHours}</th>
+
                 </tr>
             </thead>
             <tbody>
                 < tr >
-                    <td>{ }</td>
+                    <td><h3>{totalProjectHours}</h3></td>
                 </tr>
             </tbody>
         </Table>

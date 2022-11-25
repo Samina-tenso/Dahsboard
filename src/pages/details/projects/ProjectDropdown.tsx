@@ -1,9 +1,10 @@
-import useProjectsGroup from '../Hooks/useProjectsGroup'
 import { useEffect, useState } from 'react'
-import { useProjectContext } from '../Hooks/useProjectContext'
+import { useProjectContext } from '../../../Hooks/useProjectContext'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from "react-bootstrap";
 
 const ProjectDropDown = () => {
-    const { projects, selectedProject, setSelectedProject, setGroupedProjects, removeProject, tasks, setProjects } = useProjectContext()
+    const { projects, selectedProject, setSelectedProject } = useProjectContext()
     const [isOpen, setIsOpen] = useState<boolean>(false)
     useEffect(() => {
     }, [isOpen])
@@ -21,23 +22,22 @@ const ProjectDropDown = () => {
         setSelectedProject({ ...selectedProject, id: id, title: title })
     }
     return (
-        <div>
-            <div>
-                {selectedProject ? selectedProject.title : <p>Choose Project</p>}
-                <button onClick={handleDropDown} >ˇ</button>
-            </div>
-            <div>
+        <Container>
+            <Row >
+
+                <Col>{selectedProject ? selectedProject.title : <p>Choose Project</p>}</Col>
+                <Col>   <button onClick={handleDropDown} >ˇ</button> </Col>
                 {isOpen ? (
-                    <ul>
+
+                    <Col>
                         {projects.map(project => (
                             <li key={project.id} onClick={() => { chooseProject(project.id, project.title); handleDropDown() }}> {project.title}</li>
                         ))}
-                    </ul>
+                    </Col>
                 )
                     : null}
-            </div>
-        </div>
+            </Row>
+        </Container>
     )
 }
-
 export default ProjectDropDown

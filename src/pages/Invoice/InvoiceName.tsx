@@ -1,8 +1,8 @@
-import { useProjectContext } from '../Hooks/useProjectContext'
+import { useProjectContext } from '../../Hooks/useProjectContext'
 import { useState } from 'react'
 
 const InvoiceName = () => {
-    const { tasks, setTasks, projects, invoiceName, setInvoiceName, removeProject, setProjects, } = useProjectContext()
+    const { invoiceName, setInvoiceName } = useProjectContext()
     console.log(invoiceName)
     const [submitted, setsubmitted] = useState<boolean>(false)
     const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +17,7 @@ const InvoiceName = () => {
     }
     return (
         <div>
-            {submitted ? <p>{invoiceName?.name}</p> :
+            {submitted ? <p>Customer Name: {invoiceName?.name}</p> :
                 <form onSubmit={handleSubmit}>
                     < input id="name" placeholder="name" type="text" onChange={(e) => handleForm(e)} />
                 </form>
