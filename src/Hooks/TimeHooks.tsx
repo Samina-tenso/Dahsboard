@@ -1,5 +1,3 @@
-
-
 export const useGetTaskTime: GetTaskTime = {
     sum(a, b, c) {
         return (a + ((b / 60) + (c / 3600)))

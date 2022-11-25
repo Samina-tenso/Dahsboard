@@ -8,7 +8,6 @@ const ActiveTasks = (props: TaskProps) => {
     const { tasks, newTask, setNewTaskArray } = useProjectContext()
     useEffect(() => {
         getActiveTasks()
-
     }, [tasks])
     useEffect(() => {
     }, [newTask])

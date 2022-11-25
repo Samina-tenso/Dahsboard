@@ -1,6 +1,5 @@
-import axios, { Axios, AxiosError, AxiosRequestConfig, AxiosResponse } from "axios"
-import { useEffect, useState } from "react"
-//Type is use defined type
+import axios, { Axios, AxiosError, AxiosRequestConfig } from "axios"
+
 export async function useAxiosFetch<Type>(params: AxiosRequestConfig<any>): Promise<Type | null> {
     axios.defaults.baseURL = "http://localhost:3000";
     try {

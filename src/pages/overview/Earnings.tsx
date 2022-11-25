@@ -34,10 +34,7 @@ const Earnings = () => {
                 })
             })
         })
-        console.log(newArray)
         setTotalEarnings(newArray.reduce((next, sum) => { return next + sum }, 0))
-        console.log(totalEarnings)
-        //invoice.created == d && invoice.status == "paid" && invoice.totalPrice)
     }
     return (
         <Table>

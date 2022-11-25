@@ -11,9 +11,7 @@ const TaskCard = () => {
     const { showAllTasks, setShowAllTasks, setTasks, tasks } = useProjectContext()
     useEffect(() => {
     }, [showAllTasks])
-
     function removeTime(id: string): void {
-        console.log("did")
         useAxiosFetch<Task[]>({
             method: "PATCH",
             url: `/tasks/${id}`,
@@ -26,10 +24,7 @@ const TaskCard = () => {
             }
         })
     }
-
     const deleteTask = (id: string): void => {
-
-        console.log(id)
         useAxiosFetch<Task[]>({
             method: "DELETE",
             url: `/tasks/${id}`,

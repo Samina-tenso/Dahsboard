@@ -14,11 +14,9 @@ const ProjectDropDown = () => {
         }
         if (isOpen) {
             setIsOpen(false)
-            console.log(projects)
         }
     }
     const chooseProject = (id: string, title: string) => {
-        console.log(id)
         setSelectedProject({ ...selectedProject, id: id, title: title })
     }
     return (

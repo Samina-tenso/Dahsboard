@@ -7,13 +7,11 @@ const ProjectList = () => {
     const { tasks, projects, setProjects } = useProjectContext()
     let group = useProjectsGroup(tasks, 'projectId')
     const deleteProject = (id: string): void => {
-        console.log(id)
         useAxiosFetch<Project[]>({
             method: "DELETE",
             url: `/projects/${id}`,
         }).then((resp) => {
             if (resp) {
-                console.log(resp)
                 setProjects?.(projects.filter((project) => project.id !== id))
             }
         })
